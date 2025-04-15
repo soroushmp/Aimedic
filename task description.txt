@@ -1,0 +1,81 @@
+Interview Task
+Task:
+Write a FastAPI application to store and retrieve metadata from DICOM files.
+Requirements:
+
+
+Set up a FastAPI application:
+
+Use FastAPI to create two endpoints:
+
+
+POST /: This endpoint will accept a DICOM file, extract the following metadata, and store it in a SQL database:
+
+PatientID
+StudyInstanceUID
+SeriesInstanceUID
+Modality
+
+
+
+GET /: This endpoint will allow querying records stored in the database. You should be able to query by the following metadata:
+
+PatientID
+StudyInstanceUID
+SeriesInstanceUID
+Modality
+
+
+
+
+
+
+
+DICOM File Handling:
+
+Use a library like pydicom to parse the DICOM file and extract the metadata.
+
+
+
+Database:
+
+Use SQLAlchemy as an ORM for interacting with the database.
+Store the DICOM metadata in a relational database (SQLite, PostgreSQL, etc.).
+Use an SQLite database for simplicity, or configure a PostgreSQL database if required.
+
+
+
+Use Poetry for Dependency Management:
+
+Create a pyproject.toml file with the required dependencies.
+
+
+
+
+Steps to implement:
+
+
+Create the FastAPI project:
+
+Initialize a FastAPI app with the required endpoints.
+Install dependencies using Poetry.
+
+
+
+Database Model Setup:
+
+Define an SQLAlchemy model to store the extracted metadata.
+
+
+
+Implement / Endpoint:
+
+Accept the DICOM file.
+Parse the file using pydicom to extract PatientID, StudyInstanceUID, SeriesInstanceUID, and Modality.
+Store this data in the SQL database.
+
+
+
+Implement / Endpoint:
+
+Allow querying the database using filters for the metadata fields (PatientID, StudyInstanceUID, etc.).
