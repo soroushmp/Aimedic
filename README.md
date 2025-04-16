@@ -27,3 +27,10 @@ poetry install --no-root
 poetry run alembic upgrade head
 
 poetry run uvicorn app.main:app --reload
+```
+
+### Using Docker
+
+```bash
+docker compose up --build
+```
